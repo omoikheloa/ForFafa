@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+body {
+  background-color: #e0f2f1; /* Light blue background */
+  height: 100%;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  margin: 10px;
+  position: relative;
+  transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 3;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px 0px;
+}
+
+.slideshow-container {
+  background-color: #fff; /* White background */
+  color: #1565c0; /* Dark blue text */
+  padding: 20px;
+  border-radius: 45px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  height: 120px;
+  width: 45%; /* Adjust width as needed */
+}
+
+.slideshow-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.slideshow-container h2 {
+  font-size: 1.2rem;
+  background-color: #0d47a1;
+  border-radius: 40px;
+  color: #fff;
+}
+
+.quiz-container {
+  background-color: #90caf9; /* Light blue background */
+  color: #0d47a1; /* Dark blue text */
+  padding: 0px;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  height: 450px;
+  transition: all 0.5s ease-in-out;
+}
+
+.quiz-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1px;
+}
+
+.quiz-container button[type="submit"] {
+  display: block;
+  margin: 2px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #1976d2; /* Dark blue button */
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.quiz-container #question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.quiz-container #answers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.quiz-container input[type="radio"] {
+  margin-right: 5px;
+  align-items: baseline;
+}
+
+#mainMessage {
+  top: 25%;
+  left: 0%;
+  padding: 3mm;
+  background-color: #64b5f6; /* Medium blue background */
+  display: inline-block;
+  position: relative;
+  width: 40%;
+  color: #fff; /* White text */
+  border-radius: 40px;
+}
+
+#signature {
+  transition: all .2s;
+  visibility: hidden;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  padding: 3mm;
+  border-radius: 3mm;
+  background-color: #0d47a1; /* Dark blue background */
+  display: inline-block;
+  position: fixed;
+  color: #fff; /* White text */
+  border-radius: 40px;
+}
+
+#signature:hover {
+  background-color: #01579b; /* Lighter blue background on hover */
+}
