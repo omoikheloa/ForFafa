@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Get to know me</title>
+    <style>
+        /* Additional styles for new layout */
+        .content-container {
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        .slideshow-container {
+            width: 60%;
+            margin: 0 auto;
+            min-height: 150px;
+        }
+
+        .lower-content {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .quiz-container {
+            width: 250px;
+            flex: none;
+        }
+
+        .embedded-site-container {
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .lower-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quiz-container,
+            .embedded-site-container {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -26,62 +74,60 @@
             </div>
         </div>
 
+        <div id="mainMessage">Hey, Fafa</div>
+
         <div class="content-container">
             <div class="slideshow-container">
                 <h2>All the Things I Love About You</h2>
-            <div class="mySlides fade">
-                <h3>You're always there for me</h3>
+                <div class="mySlides fade">
+                    <h3>You're always there for me</h3>
+                </div>
+                <div class="mySlides fade">
+                    <h3>Your kindness brightens my day</h3>
+                </div>
+                <div class="mySlides fade">
+                    <h3>Your eyes</h3>
+                </div>
+                <div class="mySlides fade">
+                    <h3>Your nose</h3>
+                </div>
+                <div class="mySlides fade">
+                    <h3>Your voice</h3>
+                </div>
             </div>
-            <div class="mySlides fade">
-                <h3>Your kindness brightens my day</h3>
+
+            <div class="lower-content">
+                <div class="quiz-container">
+                    <h2>Quiz</h2>
+                    <div id="question"></div>
+                    <form id="quiz-form">
+                        <div id="answers"></div>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div id="result"></div>
+                </div>
             </div>
-            <div class="mySlides fade">
-                <h3>Your eyes</h3>
+            <button id="openModal" class="anniversary-trigger">View Anniversary Message</button>
+
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <div class="modal-body">
+                        <iframe src="anniversary.html" 
+                                loading="lazy"
+                                onload="handleIframeLoad()"
+                                onerror="handleIframeError()">
+                        </iframe>
+                    </div>
+                </div>
             </div>
-            <div class="mySlides fade">
-                <h3>Your nose</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Your voice</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Your hair</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Our future babies</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Your hands</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Your laughter is contagious</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Your laughter is contagious</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>Your thought process</h3>
-            </div>
-            <div class="mySlides fade">
-                <h3>You love me</h3>
-            </div>
-            </div>
-            
-            <div class="quiz-container">
-                <h2>Quiz</h2>
-                <div id="question"></div>
-                <form id="quiz-form">
-                    <div id="answers"></div>
-                    <button type="submit">Submit</button>
-                </form>
-                <div id="result"></div>
-            </div>
+
         </div>
 
-        <div id="mainMessage">Hey, Fafa</div>
-<a target="_blank" href="https://www.instagram.com/undisputed_ish?igsh=N2dncjVsOXoyZmp5&utm_source=qr">
-    <div id="signature">From your baby</div>
-</a>
+        <a target="_blank" href="https://www.instagram.com/undisputed_ish?igsh=N2dncjVsOXoyZmp5&utm_source=qr">
+            <div id="signature">From your baby</div>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>

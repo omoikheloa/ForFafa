@@ -282,3 +282,66 @@ setTimeout(function() {
       }
     }
 }, 60000); // 2 minutes in milliseconds
+
+// document.getElementById("openModal").addEventListener("click", function() {
+//     document.getElementById("modal").style.display = "flex";
+// });
+
+// document.getElementById("closeModal").addEventListener("click", function() {
+//     document.getElementById("modal").style.display = "none";
+// });
+
+// window.addEventListener("click", function(event) {
+//     if (event.target === document.getElementById("modal")) {
+//         document.getElementById("modal").style.display = "none";
+//     }
+// });
+
+// Modal functionality
+const openModalButton = document.getElementById("openModal"); // Get the button
+const modal = document.getElementById("modal");
+const closeModalButton = document.getElementById("closeModal");
+
+openModalButton.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
+
+closeModalButton.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+// Modal Control Functions
+function handleIframeLoad() {
+    console.log("Anniversary content loaded successfully");
+}
+
+function handleIframeError() {
+    console.error("Error loading anniversary content");
+    document.getElementById("iframeContainer").innerHTML = 
+        "<p>Error loading content. Please try again later.</p>";
+}
+
+// Event Listeners (Add to existing JS)
+document.getElementById("openModal").addEventListener("click", function() {
+    document.getElementById("modal").style.display = "flex";
+});
+
+document.getElementById("closeModal").addEventListener("click", function() {
+    document.getElementById("modal").style.display = "none";
+});
+
+window.addEventListener("click", function(event) {
+    if (event.target === document.getElementById("modal")) {
+        document.getElementById("modal").style.display = "none";
+    }
+});
+
+function showSignature() {
+    signatureElem.style.visibility = "visible";
+}
